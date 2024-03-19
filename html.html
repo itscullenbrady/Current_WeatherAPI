@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title style="text-align: center;">Weather App</title>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <h1>Weather App</h1>
+    <form style="text-align: center;" id="city-form">
+        <label for="city-input">Enter city name:</label>
+        <input type="text" id="city-input" name="city-input">
+        <button type="submit">Get Weather</button>
+    </form>
+    <div id="weather-output"></div>
+
+    <div style="max-width: 25%; justify-content: space-between; display: flex;">
+        <canvas id="tempChart"></canvas>
+        <canvas id="humidityChart"></canvas>
+        <canvas id="windChart"></canvas>
+    </div>
+
+</body>
+
+</html>
