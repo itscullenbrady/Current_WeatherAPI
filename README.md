@@ -7,11 +7,6 @@ Displays temperature, humidity, and wind speed
 Includes charts to visualize temperature, humidity, and wind speed
 Getting Started
 To get started, you'll need to sign up for a free API key from OpenWeatherMap. Once you have your API key, you can replace the placeholder value in the url variable with your own key.
-
-javascript
-Edit
-Full Screen
-Copy code
 const apiKey = "your_api_key_here";
 Usage
 To use the application, simply enter the name of a city in the input field and click the "Get Weather" button. The application will fetch the weather data for the specified city and display it on the page.
@@ -19,14 +14,10 @@ To use the application, simply enter the name of a city in the input field and c
 Code Snippet
 Here's a code snippet that demonstrates how to fetch weather data from the OpenWeatherMap API and display it on the page:
 
-javascript
-Edit
-Full Screen
-Copy code
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById("city-form");
-    const cityInput = document.getElementById("city-input");
-    const weatherOutput = document.getElementById("weather-output");
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById("city-form");
+        const cityInput = document.getElementById("city-input");
+        const weatherOutput = document.getElementById("weather-output");
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -50,36 +41,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error("Error fetching weather data:", error);
                 weatherOutput.innerHTML = "<p>Error fetching weather data. Please try again.</p>";
             });
-    });
-});
+            });
+        });
+        
 Charts
 The application includes charts to visualize temperature, humidity, and wind speed. Here's an example of how to create a chart using the Chart.js library:
-
-javascript
-Edit
-Full Screen
-Copy code
-let ctxTemp = document.getElementById('tempChart').getContext('2d');
-let tempChart = new Chart(ctxTemp, {
-    type: 'bar',
-    data: {
-        labels: ['Temperature'],
-        datasets: [{
-            label: 'Temperature',
-            data: [data.main.temp],
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgba(255, 99, 132, 1)',
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
+        
+        
+        let ctxTemp = document.getElementById('tempChart').getContext('2d');
+        let tempChart = new Chart(ctxTemp, {
+            type: 'bar',
+            data: {
+                labels: ['Temperature'],
+                datasets: [{
+                    label: 'Temperature',
+                    data: [data.main.temp],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
             }
-        }
-    }
-});
+        });
+
 Troubleshooting
 If you encounter any issues while using the application, please check the following:
 
